@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crypto Trending</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #1a1a1a; color: white; }
+        .coin-card { border: 1px solid #444; padding: 10px; margin: 10px; display: inline-block; width: 200px; text-align: center; border-radius: 8px; }
+        img { width: 50px; }
+    </style>
+</head>
+<body>
+    <h1>Today's Trending Crypto 🚀</h1>
+    <div id="container">
+        {% for coin in coins %}
+        <div class="coin-card">
+            <img src="{{ coin.item.small }}" alt="coin icon">
+            <h3>{{ coin.item.name }} ({{ coin.item.symbol }})</h3>
+            <p>Market Cap Rank: #{{ coin.item.market_cap_rank }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
